@@ -5,7 +5,12 @@ def more_than_20(file):
     for word in data:
         if len(word.strip()) > 20: #len gets length of word. stripping of extra spaces that might mess up stuff.
             print(word)
-more_than_20('CROSSWD.txt')
+
+#do this instead
+words = []
+data = open(file, 'r')
+words = [x.strip() for x in data if len (x.strip()) > 20]
+print(more_than_20('CROSSWD.txt'))
 
 def has_no_e(word):
     if word: #has no e
